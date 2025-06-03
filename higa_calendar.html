@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HIGA calendar</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <img src="higa.jpg" alt="トップ画像" class="top-image" />
+  </header>
+
+  <div class="gallery">
+    <!-- 例： -->
+    <div class="image-box">
+      <img src="image/higa_32.jpg" alt="Day 32" onclick="openModal('image/higa_32.jpg')" />
+    </div>
+    <div class="image-box">
+      <img src="image/higa_31.jpg" alt="Day 31" onclick="openModal('image/higa_31.jpg')" />
+    </div>
+
+    <!-- 以下、同様に追加 -->
+  </div>
+
+  <!-- モーダル構造 -->
+  <div id="modal" class="modal" onclick="closeModal()">
+    <img id="modal-img" src="" alt="拡大画像" />
+  </div>
+
+  <script>
+    function openModal(src) {
+      document.getElementById("modal-img").src = src;
+      document.getElementById("modal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+  </script>
+</body>
+</html>
