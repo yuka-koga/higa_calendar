@@ -32,26 +32,54 @@ h1 {
   padding: 20px;
 }
 
+/* サムネイル枠：画像・ダミー共通 */
 .image-box {
   background: white;
   border: 2px solid #6200ad;
   border-radius: 8px;
-  padding: 6px;
   text-align: center;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
+/* 実画像サムネイル */
 .image-box img {
   width: 100%;
-  height: auto;
-  border-radius: 4px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px 6px 0 0;
   cursor: pointer;
 }
 
+/* 画像下のテキスト */
 .image-box p {
-  margin: 6px 0 0;
+  margin: 6px;
   color: #6200ad;
   font-weight: bold;
   font-size: 0.9em;
+}
+
+/* ダミー表示 */
+.placeholder {
+  background: #ddd;
+  border: 2px dashed #6200ad;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #6200ad;
+  font-weight: bold;
+}
+
+.placeholder-text {
+  font-size: 0.9em;
+  padding: 8px;
+  text-align: center;
+  line-height: 1.4;
 }
 
 /* モーダル拡大画像用 */
@@ -75,29 +103,28 @@ h1 {
   border-radius: 10px;
   box-shadow: 0 0 20px #000;
 }
-.placeholder {
-  background: #ddd;
-  color: #6200ad;
+
+.button-area {
+  margin-top: 10px;
+}
+
+.link-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #6200ad;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.95em;
   font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  min-height: 120px;
-  border: 2px dashed #6200ad;
-  border-radius: 8px;
-  position: relative;
+  transition: background-color 0.2s ease;
 }
 
-.placeholder-text {
-  font-size: 1em;
-  text-align: center;
-  padding: 10px;
-  line-height: 1.4;
+.link-button:hover {
+  background-color: #4e008a;
 }
 
-
-/* レスポンシブ調整 */
+/* PC時のグリッド固定 */
 @media (min-width: 1000px) {
   .gallery {
     grid-template-columns: repeat(5, 1fr);
