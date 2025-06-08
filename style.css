@@ -105,23 +105,33 @@ h1 {
 }
 
 .button-area {
-  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
 }
 
 .link-button {
   display: inline-block;
-  padding: 8px 16px;
+  padding: 10px 18px;
   background-color: #6200ad;
-  color: white;
+  color: #fff;
   text-decoration: none;
   border-radius: 6px;
-  font-size: 0.95em;
   font-weight: bold;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.3s ease;
 }
 
 .link-button:hover {
   background-color: #4e008a;
+}
+
+.hyotei-button {
+  background-color: #004aad;
+}
+
+.hyotei-button:hover {
+  background-color: #003080;
 }
 
 /* PC時のグリッド固定 */
